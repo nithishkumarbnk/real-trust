@@ -4,9 +4,9 @@ A modern **full-stack real estate web application** with a powerful **Admin Dash
 
 ## 🚀 Live Demo
 
-- **Website**: https://real-trust-g840h50gs-nithishkumarbnks-projects.vercel.app
-- **Backend API**: https://real-trust-00fu.onrender.com
-- **Admin Panel**: https://real-trust-g840h50gs-nithishkumarbnks-projects.vercel.app/admin
+- **Website**
+- **Backend API**
+- **Admin Panel**
 
 ---
 
