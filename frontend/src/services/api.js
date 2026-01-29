@@ -1,10 +1,13 @@
 import axios from "axios";
 
+// Use production URL if available, fallback to localhost
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
+console.log("🌐 API URL:", API_URL);
 
 const api = axios.create({
   baseURL: API_URL,
-  timeout: 10000,
+  timeout: 30000, // Increased for Render cold starts
   headers: {
     "Content-Type": "application/json",
   },
