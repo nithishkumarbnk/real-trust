@@ -7,15 +7,19 @@ dotenv.config();
 
 const app = express();
 
-// CORS for production
+// CORS - ALLOW ALL VERCEL PREVIEW URLS
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
       "http://localhost:3000",
-      process.env.FRONTEND_URL || "https://your-app.vercel.app",
+      "https://real-trust-g840h50gs-nithishkumarbnks-projects.vercel.app", // Your Vercel URL
+      /^https:\/\/real-trust-.*\.vercel\.app$/, // All Vercel preview URLs
+      process.env.FRONTEND_URL,
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
 
@@ -25,7 +29,6 @@ app.use(express.urlencoded({ extended: true }));
 // Connect to MongoDB
 connectDB();
 
-// Routes
 // Routes - FIXED FILE NAMES
 app.use("/api/projects", require("./routes/projects")); // Changed
 app.use("/api/clients", require("./routes/clients")); // Changed
