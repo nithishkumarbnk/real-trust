@@ -26,10 +26,11 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // Routes
-app.use("/api/projects", require("./routes/projectRoutes"));
-app.use("/api/clients", require("./routes/clientRoutes"));
-app.use("/api/contacts", require("./routes/contactRoutes"));
-app.use("/api/newsletter", require("./routes/newsletterRoutes"));
+// Routes - FIXED FILE NAMES
+app.use("/api/projects", require("./routes/projects")); // Changed
+app.use("/api/clients", require("./routes/clients")); // Changed
+app.use("/api/contacts", require("./routes/contacts")); // Changed
+app.use("/api/newsletter", require("./routes/newsletter")); // Changed
 
 // Health check
 app.get("/", (req, res) => {
